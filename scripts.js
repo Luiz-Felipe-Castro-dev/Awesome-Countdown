@@ -1,6 +1,7 @@
 // Function to calculate and display the difference
 const counter = document.getElementById("counter")
 const dateTimeInput = document.getElementById("datetimeinput")
+const target_date_text = document.getElementById("target_date")
 
 dateTimeInput.addEventListener('change', () => {
     localStorage.setItem("date", dateTimeInput.value)
@@ -14,6 +15,16 @@ function calculateAndDisplayDifference() {
         dateInput = data_armazenada
     }
     const targetDate = new Date(dateInput);
+    target_date_text.textContent = "Counting down to " + targetDate.toLocaleString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+    });
 
     const difference = targetDate - now;
 

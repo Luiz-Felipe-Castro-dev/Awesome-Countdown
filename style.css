@@ -9,7 +9,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+  /* gap: 30px; */
   background-color: rgb(72, 82, 226);
   border-radius: 20px;
 
