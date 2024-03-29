@@ -1,0 +1,54 @@
+.countdown {
+  font-family: "roboto condensed";
+
+  background-color: aliceblue;
+
+  width: 450px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: rgb(72, 82, 226);
+  border-radius: 20px;
+
+  #counter {
+    font-size: 28px;
+  }
+  p,
+  h1 {
+    color: white;
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  background-color: floralwhite;
+  background-image: url(assets/clock-pattern-background.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+}
+.text-like-input {
+  border: none; /* Removes the border */
+  outline: none; /* Removes the outline */
+  background: none; /* Removes the background */
+  font-size: 16px; /* Match the font size to surrounding text */
+  font-family: inherit; /* Ensures the font matches surrounding text */
+}
+
+/* Optional: Add focus styles to make it clear when the input is focused */
+.text-like-input:focus {
+  border-bottom: 1px solid black; /* Example focus style */
+}
