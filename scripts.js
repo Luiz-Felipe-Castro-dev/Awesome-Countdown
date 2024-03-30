@@ -10,10 +10,15 @@ function calculateAndDisplayDifference() {
     const now = new Date();
     const data_armazenada = localStorage.getItem('date')
 
-    let dateInput = dateTimeInput.value.length > 3 ? dateTimeInput.value : now
+    let dateInput;
+    if (dateTimeInput.value.length > 3) {
+        dateInput = dateTimeInput.value
+    } else {
+        dateInput = now
+    }
     if (data_armazenada) {
         dateInput = data_armazenada
-    }
+    } else { }
     const targetDate = new Date(dateInput);
     target_date_text.textContent = "Counting down to " + targetDate.toLocaleString('en-US', {
         weekday: 'long',
@@ -25,9 +30,14 @@ function calculateAndDisplayDifference() {
         second: '2-digit',
         hour12: true,
     });
+    if (!(dateTimeInput.value.length > 3) && !(data_armazenada)) {
+        target_date_text.textContent = "Counter not initialized"
+    }
 
     const difference = targetDate - now;
-
+    if(difference<0){
+        return counter.innerHTML = "Date Reached!"
+    }
     const days = String(Math.floor(difference / (1000 * 60 * 60 * 24)));
     const hours = String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, '0');
     const minutes = String(Math.floor((difference / (1000 * 60)) % 60)).padStart(2, '0');
